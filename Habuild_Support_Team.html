@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habuild_Support_Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            /* Changed from #f8f8f8 */
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            padding: 10px;
+            font-size: large;
+        }
+
+        .image-section {
+            display: flex;
+            justify-content: center;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+
+        .image-section img {
+            /* max-width: 800px; */
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            /* allow responsiveness */
+            padding: 20px;
+        }
+
+        .image-box {
+            text-align: center;
+            width: 250px;
+        }
+
+        .image-box img {
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .image-box p {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #333;
+        }
+
+
+        .info-section {
+            display: flex;
+            color: #222121;
+            padding-left: 100px;
+            /* max-width: 900px; */
+            margin: 12px auto;
+            border-radius: 8px;
+            text-align: left;
+
+            /* <-- This aligns the text to the left */
+        }
+
+
+        .info-block {
+            margin-bottom: 10px;
+            gap: 40px;
+        }
+
+        .info-block h2 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #222121;
+            margin-bottom: 10px;
+            font-family: Arial, sans-serif;
+
+        }
+
+        .info-block p {
+            margin: 5px 0 0;
+        }
+
+        .summary-section,
+        .takeaways-section {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+
+        }
+
+        .summary-section h2,
+        .takeaways-section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-family: Arial, sans-serif;
+
+        }
+
+        .takeaways-section ul {
+            padding-left: 20px;
+        }
+
+        .takeaways-section li {
+            margin-bottom: 10px;
+        }
+
+        .info-block {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .process-container {
+            display: flex;
+            gap: 40px;
+            /* space between the two blocks */
+            flex-wrap: wrap;
+            /* allows responsiveness on smaller screens */
+        }
+
+        .process-block {
+            flex: 1;
+            min-width: 300px;
+            /* ensures decent layout on small screens */
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .process-block h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .process-block li {
+            margin-bottom: 10px;
+        }
+
+        .process-block ul {
+            padding-left: 20px;
+            list-style-type: circle;
+            /* This sets the bullet style to circle */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Responsive Navigation Bar -->
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md px-4 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <div class="text-xl font-bold gradient-text">JIVATI</div>
+
+            <!-- Hamburger Menu Button (Mobile Only) -->
+            <button id="menu-toggle" class="text-gray-700 text-2xl md:hidden">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Nav Links (Desktop) -->
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html#home" class="nav-link text-gray-700 hover:text-purple-600 transition">Home</a>
+                <a href="index.html#work" class="nav-link text-gray-700 hover:text-purple-600 transition">Work</a>
+                <a href="index.html#skills" class="nav-link text-gray-700 hover:text-purple-600 transition">Skills</a>
+                <a href="about.html" class="nav-link text-gray-700 hover:text-purple-600 transition">About</a>
+                <a href="Resume (2).pdf" target="_main"
+                    class="nav-link text-gray-700 hover:text-purple-600 transition">Resume</a>
+            </div>
+        </div>
+
+        <!-- Nav Links (Mobile Dropdown) -->
+        <div id="mobile-menu" class="hidden flex-col space-y-4 mt-4 px-4 md:hidden">
+            <a href="index.html#home" class="nav-link text-gray-700 hover:text-purple-600 transition">Home</a> -
+            <a href="index.html#work" class="nav-link text-gray-700 hover:text-purple-600 transition">Work</a> -
+            <a href="index.html#skills" class="nav-link text-gray-700 hover:text-purple-600 transition">Skills</a> -
+            <a href="about.html" class="nav-link text-gray-700 hover:text-purple-600 transition">About</a> -
+            <a href="Resume (2).pdf" target="_main"
+                class="nav-link text-gray-700 hover:text-purple-600 transition">Resume</a>
+        </div>
+    </nav>
+
+    <!-- JavaScript to Toggle Menu -->
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+    <section class="flex flex-col lg:flex-row items-center justify-between px-6 md:px-20 pt-10 gap-10">
+        <!-- Left: Logo + Header -->
+        <div class="flex flex-col items-start lg:w-1/2 space-y-4">
+            <!-- Logo -->
+            <img src="HabuildLogo.jpeg" alt="Habuild Logo" class="h-20 w-auto object-contain mb-2" />
+
+            <!-- Header Text -->
+            <div>
+                <h1 class="text-2xl font-bold text-purple-800 mb-4">
+                    Habuild, Nagpur — Customer Success Executive Team Lead
+                </h1>
+                <p class="text-gray-700 text-base">HCF (Habuild Caring Friends) Mentor</p>
+                <p class="text-gray-600 text-sm">January 2023 – PRESENT</p>
+            </div>
+        </div>
+
+        <!-- Right: Big Image -->
+        <div class="lg:w-[30%] xl:w-[50%]">
+            <img src="HabuildTeam.jpeg" alt="Internship Group Photo" class="w-full rounded-lg shadow-lg object-cover" />
+        </div>
+    </section>
+    </section>
+
+    <section class="info-section flex flex-col lg:flex-row gap-10 px-6 md:px-20 py-6 bg-white">
+        <!-- Roles Progression -->
+        <div class="info-block flex-1 bg-gray-50 p-6 rounded-xl shadow-sm">
+            <h2 class="text-xl font-semibold text-purple-800 mb-4 border-b border-purple-300 pb-2">Role Progression at
+                Habuild</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li><strong>Customer Support Executive</strong> (Jan 2023 – Jun 2023)</li>
+                <li><strong>CRM Executive</strong> (Jul 2023 – Sep 2023)</li>
+                <li><strong>CRM Backup Lead</strong> (Nov 2023 – Apr 2024)</li>
+                <li><strong>Customer Success Executive Squad Lead</strong> (May 2024 – Dec 2024)</li>
+            </ul>
+        </div>
+
+        <!-- Team Structure -->
+        <div class="info-block flex-1 bg-gray-50 p-6 rounded-xl shadow-sm">
+            <h2 class="text-xl font-semibold text-purple-800 mb-4 border-b border-purple-300 pb-2">Team Structure</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li><strong>Wati Team</strong> – WhatsApp automation and support tools</li>
+                <li><strong>CRM Team</strong> – Customer data, dashboards, and analytics</li>
+                <li><strong>Squad Lead</strong> – Coordination, escalations, and leadership</li>
+                <li><strong>Operational Team (HCF Mentor)</strong> – Mentoring new HCFs (Habuild Caring Friends)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Core Processes & Responsibilities -->
+    <!-- <p class="mb-2 text-center font-semibold text-gray-800">Cross-functional collaboration includes:</p> -->
+    <section class="info-section flex flex-col lg:flex-row gap-10 px-6 md:px-20 py-2 bg-white">
+        <div class="info-block flex-1 bg-gray-50 p-6 rounded-xl shadow-sm">
+            <h2 class="text-xl font-semibold text-purple-800 mb-4 border-b border-purple-300 pb-2">Core Processes</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>Handling and resolving customer queries efficiently via WhatsApp (Wati)</li>
+                <li>Tracking user activity and engagement metrics through CRM dashboards</li>
+                <li>Managing internal workflows and updating CRM entries daily</li>
+                <li>Supporting escalation processes and ensuring timely resolutions</li>
+            </ul>
+        </div>
+
+        <div class="info-block flex-1 bg-gray-50 p-6 rounded-xl shadow-sm">
+            <h2 class="text-xl font-semibold text-purple-800 mb-4 border-b border-purple-300 pb-2">Key Responsibilities
+            </h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>Coordinating between teams to ensure smooth communication flow</li>
+                <li>Mentoring and guiding new HCF members in their daily tasks</li>
+                <li>Contributing to continuous process improvements and team efficiency</li>
+                <li>Ensuring accurate data entry, reporting, and compliance with company standards</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto my-12 px-4 py-10 bg-white rounded-xl shadow-lg">
+        <!-- Summary Section -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-purple-800 mb-4">Summary: What I have learned from Habuild</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                At Habuild, I’ve learned how much growth comes from responsibility, consistency, and collaboration.
+                Starting in customer support and growing into a leadership role taught me the importance of mentorship,
+                communication, and team building.
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+                Being an HCF Mentor helped me develop skills in training, guiding, and supporting people remotely, while
+                learning how small actions create a big impact on both individuals and organizations. Through these
+                experiences, I’ve understood how clear communication, empathy, and accountability drive success.
+            </p>
+        </div>
+
+        <!-- Image Gallery -->
+        <!-- <div class="flex flex-wrap justify-center gap-6 mb-10">
+            <div class="text-center w-60">
+                <img src="HCS_1.jpeg" alt="Me and my amazing hosts" class="w-full h-auto rounded-lg shadow-sm" />
+                <p class="mt-2 text-sm text-gray-600">Me and my amazing hosts</p>
+            </div>
+            <div class="text-center w-60">
+                <img src="HCS_2.jpeg" alt="Backyard chilling with the team"
+                    class="w-full h-auto rounded-lg shadow-sm" />
+                <p class="mt-2 text-sm text-gray-600">Backyard chilling with the team</p>
+            </div>
+            <div class="text-center w-60">
+                <img src="HCS_3.jpeg" alt="Surfing with the team" class="w-full h-auto rounded-lg shadow-sm" />
+                <p class="mt-2 text-sm text-gray-600">Surfing with the team</p>
+            </div>
+        </div> -->
+
+        <!-- Takeaways Section -->
+        <div>
+            <h2 class="text-2xl font-bold text-purple-800 mb-4">Takeways:</h2>
+            <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                <li>Strengthened communication and leadership skills through mentoring and squad management</li>
+                <li>Gained hands-on experience in user-centered design and process simplification</li>
+                <li>Created impactful visual training materials using Canva, Photoshop, and Illustrator</li>
+                <li>Improved collaboration in cross-functional, fast-paced team settings</li>
+                <li>Enhanced adaptability and resilience through real-time problem-solving</li>
+                <li>Learned to convert feedback and research into actionable improvements</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="work" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4 gradient-text">Featured Work</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                A curated collection of my design and leadership experiences — blending creativity with impact.
+            </p>
+
+            <!-- Horizontal scroll container -->
+            <div class="flex space-x-6 overflow-x-auto pb-4">
+
+                <!-- CARD -->
+                <!-- CARD -->
+                <div
+                    class="min-w-[300px] sm:min-w-[340px] bg-white shadow-lg rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row sm:items-center">
+                    <div class="p-5 sm:w-1/3 flex items-center justify-center">
+                        <img src="Habuild_Customer_support.jpg" alt="Habuild Support"
+                            class="h-24 w-32 object-cover rounded-xl shadow-md" />
+                    </div>
+                    <div class="p-4 sm:w-2/3">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Customer Success Team Lead</h3>
+                        <p class="text-sm text-purple-600 font-medium mb-2">
+                            @<a href="https://habuild.in/" target="_blank">Habuild</a>
+                        </p>
+                        <a href="Habuild_Support_Team.html" target="_main"
+                            class="text-sm text-purple-700 font-medium hover:underline">View More →</a>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div
+                    class="min-w-[300px] sm:min-w-[340px] bg-white shadow-lg rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row sm:items-center">
+                    <div class="p-5 sm:w-1/3 flex items-center justify-center">
+                        <img src="Habuild_clipMask.jpg" alt="Habuild Designs"
+                            class="h-24 w-32 object-cover rounded-xl shadow-md" />
+                    </div>
+                    <div class="p-4 sm:w-2/3">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Digital Artist</h3>
+                        <p class="text-sm text-purple-600 font-medium mb-2">
+                            @<a href="https://habuild.in/" target="_blank">Habuild</a>
+                        </p>
+                        <a href="Habuild_Designs.html" target="_main"
+                            class="text-sm text-purple-700 font-medium hover:underline">View More →</a>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div
+                    class="min-w-[300px] sm:min-w-[340px] bg-white shadow-lg rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row sm:items-center">
+                    <div class="p-5 sm:w-1/3 flex items-center justify-center">
+                        <img src="InAmigos_Foundation.jpg" alt="InAmigos"
+                            class="h-24 w-32 object-cover rounded-xl shadow-md" />
+                    </div>
+                    <div class="p-4 sm:w-2/3">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Design Intern</h3>
+                        <p class="text-sm text-purple-600 font-medium mb-2">@
+                            <a href="https://inamigosfoundation.org.in/" target="_blank">InAmigos</a>
+                        </p>
+                        <a href="InAmigos_Foundation.html" target="_main"
+                            class="text-sm text-purple-700 font-medium hover:underline">View More →</a>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div
+                    class="min-w-[300px] sm:min-w-[340px] bg-white shadow-lg rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row sm:items-center">
+                    <div class="p-5 sm:w-1/3 flex items-center justify-center">
+                        <img src="Internship_Tasks.jpg" alt="Personal Projects"
+                            class="h-24 w-32 object-cover rounded-xl shadow-md" />
+                    </div>
+                    <div class="p-4 sm:w-2/3">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Personal Projects</h3>
+                        <p class="text-sm text-purple-600 font-medium mb-2">Internship + Exploration</p>
+                        <a href="Internship_Tasks.html" target="_main"
+                            class="text-sm text-purple-700 font-medium hover:underline">View More →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <div class="w-full flex flex-col items-center text-center bg-gray-100 ">
+        <footer class="border-t border-transparent py-5 text-sm text-gray-800 w-full max-w-2xl bg-transparent">
+            <div class="mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                <!-- Middle: Message -->
+                <div class="md:text-center w-full">
+                    <p class="text-lg text-gray-600 mb-6">Thanks for reaching the bottom of this page. If you like what
+                        you see, let's
+                        connect and build something together!</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-xl font-bold gradient-text">JIVATI</a>
+                    <p class="mt-2 text-sm">Graphic Designer & Visual Storyteller</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="https://www.linkedin.com/in/jivati-jamariya-b32413249/" target="_blank"
+                        class="hover:text-purple-400 transition flex items-center space-x-2">
+                        <i class="fab fa-linkedin text-xl"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:jivati@example.com"
+                        class="hover:text-purple-400 transition flex items-center space-x-2">
+                        <i class="fas fa-envelope text-xl"></i>
+                        <span>Email Me</span>
+                    </a> <!-- <a href="#about" class="hover:text-purple-400 transition">About</a>
+                    <a href="#skills" class="hover:text-purple-400 transition">Skills</a>
+                    <a href="#resume" class="hover:text-purple-400 transition">Resume</a> -->
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>© 2023 Jivati Design Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+        }
+
+        #gallery {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #gallery h2 {
+            font-size: 24px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        .image-columns {
+            flex: 2;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            /* <-- Center the whole gallery */
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            /* <-- Center individual images in column */
+        }
+
+        .column img {
+            max-width: 100%;
+            width: 300px;
+            height: auto;
+            /* transform: rotate(5deg); */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* 
+        .column img:hover {
+            transform: rotate(5deg) scale(1.05);
+        } */
+
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .image-columns {
+                flex-direction: column;
+            }
+
+            .column {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .column img {
+                width: 100px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Responsive Navigation Bar -->
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md px-4 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <div class="text-xl font-bold gradient-text">JIVATI</div>
+
+            <!-- Hamburger Menu Button (Mobile Only) -->
+            <button id="menu-toggle" class="text-gray-700 text-2xl md:hidden">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Nav Links (Desktop) -->
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html#home" class="nav-link text-gray-700 hover:text-purple-600 transition">Home</a>
+                <a href="index.html#work" class="nav-link text-gray-700 hover:text-purple-600 transition">Work</a>
+                <a href="index.html#skills" class="nav-link text-gray-700 hover:text-purple-600 transition">Skills</a>
+                <a href="about.html" class="nav-link text-gray-700 hover:text-purple-600 transition">About</a>
+                <a href="Resume (2).pdf" target="_main"
+                    class="nav-link text-gray-700 hover:text-purple-600 transition">Resume</a>
+            </div>
+        </div>
+
+        <!-- Nav Links (Mobile Dropdown) -->
+        <div id="mobile-menu" class="hidden flex-col space-y-4 mt-4 px-4 md:hidden">
+            <a href="index.html#home" class="nav-link text-gray-700 hover:text-purple-600 transition">Home</a> -
+            <a href="index.html#work" class="nav-link text-gray-700 hover:text-purple-600 transition">Work</a> -
+            <a href="index.html#skills" class="nav-link text-gray-700 hover:text-purple-600 transition">Skills</a> -
+            <a href="about.html" class="nav-link text-gray-700 hover:text-purple-600 transition">About</a> -
+            <a href="Resume (2).pdf" target="_main"
+                class="nav-link text-gray-700 hover:text-purple-600 transition">Resume</a>
+        </div>
+    </nav>
+
+    <!-- JavaScript to Toggle Menu -->
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+    <section class="bg-white py-12">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h1 class="text-2xl font-bold mb-10 text-center gradient-text">Design Exploration Social Media Inspiration
+            </h1>
+            <p class="text-gray-600 text-lg leading-relaxed">
+                As I began exploring design tools and principles, I drew inspiration from social media trends and
+                freelance opportunities. This phase helped me translate ideas into impactful visual communication. The
+                showcased posters reflect my early work—ranging from promotional graphics to educational and wellness
+                campaigns—demonstrating my growth in layout, typography, and brand-aligned creativity.
+            </p>
+        </div>
+    </section>
+    <section id="gallery">
+        <h2><b>A little peek into my gallery</b></h2>
+        <!-- <div class="gallery-grid">
+            <img src="Internship_Tasks\porbandar clipping mask.jpg" alt="Artwork 1">
+            <img src="Internship_Tasks\Energy Drink 2.jpg" alt="Artwork 3">
+            <img src="Internship_Tasks\IMUCET EXAM ASSIGNMENT'.jpg" alt="Artwork 4">
+            <img src="Internship_Tasks\Boundaries....fly high.png" alt="Artwork 2">
+            <img src="Internship_Tasks\Clip mask bird 3.jpg" alt="Artwork 5">
+            <img src="Internship_Tasks\GYM Podcast.png" alt="Artwork 6">
+            <img src="Internship_Tasks\GYM Podcast.png" alt="Artwork 6">
+            <img src="Internship_Tasks\GYM Podcast.png" alt="Artwork 6">
+            <img src="Internship_Tasks\New logo (1)_page-0001.jpg" alt="Artwork 7">
+            <img src="Internship_Tasks\Nutra Insta post 2 (1)_page-0001.jpg" alt="Artwork 8">
+            <img src="Internship_Tasks\Nutra Insta1 (2)_page-0001.jpg" alt="Artwork 9">
+            <img src="Internship_Tasks\POUCH final BG (2)_page-0001.jpg" alt="Artwork 9">
+
+        </div> -->
+
+        <div class="image-columns justify-center">
+            <div class="column items-center">
+                <a href="Internship_Tasks/GYM Podcast.png" target="_blank">
+                    <img src="Internship_Tasks/GYM Podcast.png" alt="Artwork 6">
+                </a>
+                <a href="Internship_Tasks/Clip mask bird 3.jpg" target="_blank">
+                    <img src="Internship_Tasks/Clip mask bird 3.jpg" alt="Artwork 5">
+                </a>
+                <a href="Internship_Tasks/Energy Drink 2.jpg" target="_blank">
+                    <img src="Internship_Tasks/Energy Drink 2.jpg" alt="Artwork 2">
+                </a>
+            </div>
+            <div class="column items-center">
+                <a href="Internship_Tasks/Boundaries....fly high.png" target="_blank">
+                    <img src="Internship_Tasks/Boundaries....fly high.png" alt="Artwork 4">
+                </a>
+                <a href="Internship_Tasks/IMUCET EXAM ASSIGNMENT'.jpg" target="_blank">
+                    <img src="Internship_Tasks/IMUCET EXAM ASSIGNMENT'.jpg" alt="Artwork 3">
+                </a>
+                <a href="Internship_Tasks/porbandar clipping mask.jpg" target="_blank">
+                    <img src="Internship_Tasks/porbandar clipping mask.jpg" alt="Artwork 1">
+                </a>
+            </div>
+            <div class="column items-center">
+                <a href="Internship_Tasks/New logo (1)_page-0001.jpg" target="_blank">
+                    <img src="Internship_Tasks/New logo (1)_page-0001.jpg" alt="Artwork 9">
+                </a>
+                <a href="Internship_Tasks/Nutra Insta post 2 (1)_page-0001.jpg" target="_blank">
+                    <img src="Internship_Tasks/Nutra Insta post 2 (1)_page-0001.jpg" alt="Artwork 10">
+                </a>
+                <a href="Internship_Tasks/Nutra Insta1 (2)_page-0001.jpg" target="_blank">
+                    <img src="Internship_Tasks/Nutra Insta1 (2)_page-0001.jpg" alt="Artwork 11">
+                </a>
+                <a href="Internship_Tasks/POUCH final BG (2)_page-0001.jpg" target="_blank">
+                    <img src="Internship_Tasks/POUCH final BG (2)_page-0001.jpg" alt="Artwork 12">
+                </a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Featured Work Section -->
+    <section id="work" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4 gradient-text">Featured Work</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                A curated collection of my design and leadership experiences — blending creativity with impact.
+            </p>
+
+            <!-- Horizontal scroll container -->
+            <div class="flex space-x-6 overflow-x-auto pb-4">
+
+                <!-- CARD -->
+              <!-- CARD -->
+                <div
+                    class="min-w-[300px] sm:min-w-[340px] bg-white shadow-lg rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row sm:items-center">
+                    <div class="p-5 sm:w-1/3 flex items-center justify-center">
+                        <img src="Habuild_Customer_support.jpg" alt="Habuild Support"
+                            class="h-24 w-32 object-cover rounded-xl shadow-md" />
+                    </div>
+                    <div class="p-4 sm:w-2/3">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Customer Success Team Lead</h3>
+                        <p class="text-sm text-purple-600 font-medium mb-2">
+                            @<a href="https://habuild.in/" target="_blank">Habuild</a>
+                        </p>
+                        <a href="Habuild_Support_Team.html" target="_main"
+                            class="text-sm text-purple-700 font-medium hover:underline">View More →</a>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div
+                    class="min-w-[300px] sm:min-w-[340px] bg-white shadow-lg rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row sm:items-center">
+                    <div class="p-5 sm:w-1/3 flex items-center justify-center">
+                        <img src="Habuild_clipMask.jpg" alt="Habuild Designs"
+                            class="h-24 w-32 object-cover rounded-xl shadow-md" />
+                    </div>
+                    <div class="p-4 sm:w-2/3">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Digital Artist</h3>
+                        <p class="text-sm text-purple-600 font-medium mb-2">
+                            @<a href="https://habuild.in/" target="_blank">Habuild</a>
+                        </p>
+                        <a href="Habuild_Designs.html" target="_main"
+                            class="text-sm text-purple-700 font-medium hover:underline">View More →</a>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div
+                    class="min-w-[300px] sm:min-w-[340px] bg-white shadow-lg rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row sm:items-center">
+                    <div class="p-5 sm:w-1/3 flex items-center justify-center">
+                        <img src="InAmigos_Foundation.jpg" alt="InAmigos"
+                            class="h-24 w-32 object-cover rounded-xl shadow-md" />
+                    </div>
+                    <div class="p-4 sm:w-2/3">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Design Intern</h3>
+                        <p class="text-sm text-purple-600 font-medium mb-2">@
+                            <a href="https://inamigosfoundation.org.in/" target="_blank">InAmigos</a>
+                        </p>
+                        <a href="InAmigos_Foundation.html" target="_main"
+                            class="text-sm text-purple-700 font-medium hover:underline">View More →</a>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div
+                    class="min-w-[300px] sm:min-w-[340px] bg-white shadow-lg rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row sm:items-center">
+                    <div class="p-5 sm:w-1/3 flex items-center justify-center">
+                        <img src="Internship_Tasks.jpg" alt="Personal Projects"
+                            class="h-24 w-32 object-cover rounded-xl shadow-md" />
+                    </div>
+                    <div class="p-4 sm:w-2/3">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Personal Projects</h3>
+                        <p class="text-sm text-purple-600 font-medium mb-2">Internship + Exploration</p>
+                        <a href="Internship_Tasks.html" target="_main"
+                            class="text-sm text-purple-700 font-medium hover:underline">View More →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="w-full flex flex-col items-center text-center bg-gray-100 ">
+        <footer class="border-t border-transparent py-5 text-sm text-gray-800 w-full max-w-2xl bg-transparent">
+            <div class="mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                <!-- Middle: Message -->
+                <div class="md:text-center w-full">
+                    <p class="text-lg text-gray-600 mb-6">Thanks for reaching the bottom of this page. If you like
+                        what
+                        you see, let's
+                        connect and build something together!</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-xl font-bold gradient-text">JIVATI</a>
+                    <p class="mt-2 text-sm">Graphic Designer & Visual Storyteller</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="https://www.linkedin.com/in/jivati-jamariya-b32413249/" target="_blank"
+                        class="hover:text-purple-400 transition flex items-center space-x-2">
+                        <i class="fab fa-linkedin text-xl"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:jivati@example.com"
+                        class="hover:text-purple-400 transition flex items-center space-x-2">
+                        <i class="fas fa-envelope text-xl"></i>
+                        <span>Email Me</span>
+                    </a> <!-- <a href="#about" class="hover:text-purple-400 transition">About</a>
+                    <a href="#skills" class="hover:text-purple-400 transition">Skills</a>
+                    <a href="#resume" class="hover:text-purple-400 transition">Resume</a> -->
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>© 2023 Jivati Design Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

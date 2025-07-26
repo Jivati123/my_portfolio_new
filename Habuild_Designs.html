@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+        }
+
+        #gallery {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Responsive Navigation Bar -->
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md px-4 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <div class="text-xl font-bold gradient-text">JIVATI</div>
+
+            <!-- Hamburger Menu Button (Mobile Only) -->
+            <button id="menu-toggle" class="text-gray-700 text-2xl md:hidden">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Nav Links (Desktop) -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="nav-link text-gray-700 hover:text-purple-600 transition">Home</a>
+                <a href="#work" class="nav-link text-gray-700 hover:text-purple-600 transition">Work</a>
+                <a href="#skills" class="nav-link text-gray-700 hover:text-purple-600 transition">Skills</a>
+                <a href="about.html" class="nav-link text-gray-700 hover:text-purple-600 transition">About</a>
+                <a href="Resume (2).pdf" target="_main"
+                    class="nav-link text-gray-700 hover:text-purple-600 transition">Resume</a>
+            </div>
+        </div>
+
+        <!-- Nav Links (Mobile Dropdown) -->
+        <div id="mobile-menu" class="hidden flex-col space-y-4 mt-4 px-4 md:hidden">
+            <a href="index.html#home" class="nav-link text-gray-700 hover:text-purple-600 transition">Home</a> -
+            <a href="index.html#work" class="nav-link text-gray-700 hover:text-purple-600 transition">Work</a> -
+            <a href="index.html#skills" class="nav-link text-gray-700 hover:text-purple-600 transition">Skills</a> -
+            <a href="#about.html" class="nav-link text-gray-700 hover:text-purple-600 transition">About</a> -
+            <a href="Resume (2).pdf" target="_main"
+                class="nav-link text-gray-700 hover:text-purple-600 transition">Resume</a>
+        </div>
+    </nav>
+
+    <!-- JavaScript to Toggle Menu -->
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Intro Section -->
+    <section class="bg-white py-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-2xl font-bold mb-6 gradient-text">Posters Designed for Habuild</h1>
+            <p class="text-gray-600 text-lg leading-relaxed px-4">
+                As part of my visual storytelling journey, I have created over a dozen posters for
+                <strong>Habuild</strong>, a wellness startup focused on habit-building and yoga. These designs range
+                from event
+                promotions and festive greetings to awareness and recruitment campaigns. Each design aims to reflect the
+                brand’s
+                calm, inspiring, and uplifting tone while engaging the diverse community it serves.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">A little peek into my gallery</h2>
+
+            <!-- Text Box -->
+            <div class="max-w-6xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-10 p-6">
+                <!-- Text Block -->
+                <div class="bg-gray-100 text-gray-800 p-6 rounded-md mb-6">
+                    <div>
+                        <div class="bg-gray-200 inline-block px-3 py-1 rounded-md mb-4 font-semibold text-gray-700">
+                            Habuild Projects
+                        </div>
+                        <p class="text-base text-gray-700">
+                            Created a few posters as part of a personal project,
+                            experimenting with different color palettes and creative designs,
+                            inspired by Habuild’s focus on wellness and community.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right image grid -->
+                <div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-4 gap-6 p-4">
+                    <a href="Habuild2/dhanteras.jpg" target="_blank">
+                        <img src="Habuild2/dhanteras.jpg" alt="Dhanteras Poster"
+                            class="rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+                    </a>
+
+                    <a href="Habuild2/Bhai dooj 2.jpg" target="_blank">
+                        <img src="Habuild2/Bhai dooj 2.jpg" alt="Bhai Dooj Poster 2"
+                            class="rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+                    </a>
+
+                    <a href="Habuild2/diwali final.png" target="_blank">
+                        <img src="Habuild2/diwali final.png" alt="Diwali Poster"
+                            class="rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+                    </a>
+
+                    <a href="Habuild2/HIRING_HCF.jpg" target="_blank">
+                        <img src="Habuild2/HIRING_HCF.jpg" alt="Hiring Poster 2"
+                            class="rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+                    </a>
+
+                    <a href="Habuild2\Caring friend jam blue - Copy - Copy.jpg" target="_blank">
+                        <img src="Habuild2\Caring friend jam blue - Copy - Copy.jpg" alt="Caring Friends Jam"
+                            class="rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+                    </a>
+
+                    <a href="Habuild2/Bhai dooj 2 - Copy.jpg" target="_blank">
+                        <img src="Habuild2/Bhai dooj 2 - Copy.jpg" alt="Bhai Dooj Poster 1"
+                            class="rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+                    </a>
+
+
+                    <a href="Habuild2/diwali 2 .png" target="_blank">
+                        <img src="Habuild2/diwali 2 .png" alt="Bhai Dooj Poster 1"
+                            class="rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+                    </a>
+
+
+                    <a href="Habuild2/HIRING_HCF2.jpg" target="_blank">
+                        <img src="Habuild2/HIRING_HCF2.jpg" alt="Hiring Poster 1"
+                            class="rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+                    </a>
+
+                </div>
+            </div>
+            <div class="max-w-6xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-10 p-6">
+                <!-- Text Block -->
+                <div class="bg-gray-100 text-gray-800 p-6 rounded-md mb-6">
+                    <div>
+                        <div class="bg-gray-200 inline-block px-3 py-1 rounded-md mb-4 font-semibold text-gray-700">
+                            Habuild Projects
+                        </div>
+                        <p class="text-base text-gray-700">
+                            Created a few posters as part of a personal project,
+                            experimenting with different color palettes and creative designs,
+                            inspired by Habuild’s focus on wellness and community.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Image Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <!-- Poster 1 -->
+                    <a href="Habuild2/21 DAY POSTER.jpg" target="_blank">
+                        <img src="Habuild2/21 DAY POSTER.jpg" alt="Free Yoga Poster"
+                            class="rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+                    </a>
+
+                    <!-- Poster 2 -->
+                    <a href="Habuild2/Ayurveda&You.jpg" target="_blank">
+                        <img src="Habuild2/Ayurveda&You.jpg" alt="Ayurveda Poster"
+                            class="rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+                    </a>
+
+                    <!-- Poster 3 -->
+                    <a href="Habuild2/face yoga sunday.jpg" target="_blank">
+                        <img src="Habuild2/face yoga sunday.jpg" alt="Face Yoga Poster"
+                            class="rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+                    </a>
+
+                    <!-- Poster 4 -->
+                    <a href="Habuild2/Saurabh YTPodcast.png" target="_blank">
+                        <img src="Habuild2/Saurabh YTPodcast.png" alt="Saurabh YT Podcast Poster"
+                            class="rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+                    </a>
+
+                    <!-- Poster 5 -->
+                    <a href="Habuild2/CARING FRIENDS JAM new - Copy.jpg" target="_blank">
+                        <img src="Habuild2/CARING FRIENDS JAM new - Copy.jpg" alt="Face Yoga Poster"
+                            class="rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+                    </a>
+
+                    <a href="Habuild2/CLIP MASK HABUILd new.jpg" target="_blank">
+                        <img src="Habuild2/CLIP MASK HABUILd new.jpg" alt="Face Yoga Poster"
+                            class="rounded-lg shadow-md hover:scale-105 transform transition duration-300" />
+                    </a>
+                </div>
+            </div>
+    </section>
+
+    <!-- Featured Work Section -->
+    <section id="work" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4 gradient-text">Featured Work</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                A curated collection of my design and leadership experiences — blending creativity with impact.
+            </p>
+
+            <!-- Horizontal scroll container -->
+            <div class="flex space-x-6 overflow-x-auto pb-4">
+
+                <!-- CARD -->
+                <div
+                    class="min-w-[300px] sm:min-w-[340px] bg-white shadow-lg rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row sm:items-center">
+                    <div class="p-5 sm:w-1/3 flex items-center justify-center">
+                        <img src="Habuild_Customer_support.jpg" alt="Habuild Support"
+                            class="h-24 w-32 object-cover rounded-xl shadow-md" />
+                    </div>
+                    <div class="p-4 sm:w-2/3">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Customer Success Team Lead</h3>
+                        <p class="text-sm text-purple-600 font-medium mb-2">
+                            @<a href="https://habuild.in/" target="_blank">Habuild</a>
+                        </p>
+                        <a href="Habuild_Support_Team.html" target="_main"
+                            class="text-sm text-purple-700 font-medium hover:underline">View More →</a>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div
+                    class="min-w-[300px] sm:min-w-[340px] bg-white shadow-lg rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row sm:items-center">
+                    <div class="p-5 sm:w-1/3 flex items-center justify-center">
+                        <img src="Habuild_clipMask.jpg" alt="Habuild Designs"
+                            class="h-24 w-32 object-cover rounded-xl shadow-md" />
+                    </div>
+                    <div class="p-4 sm:w-2/3">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Digital Artist</h3>
+                        <p class="text-sm text-purple-600 font-medium mb-2">
+                            @<a href="https://habuild.in/" target="_blank">Habuild</a>
+                        </p>
+                        <a href="Habuild_Designs.html" target="_main"
+                            class="text-sm text-purple-700 font-medium hover:underline">View More →</a>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div
+                    class="min-w-[300px] sm:min-w-[340px] bg-white shadow-lg rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row sm:items-center">
+                    <div class="p-5 sm:w-1/3 flex items-center justify-center">
+                        <img src="InAmigos_Foundation.jpg" alt="InAmigos"
+                            class="h-24 w-32 object-cover rounded-xl shadow-md" />
+                    </div>
+                    <div class="p-4 sm:w-2/3">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Design Intern</h3>
+                        <p class="text-sm text-purple-600 font-medium mb-2">@
+                            <a href="https://inamigosfoundation.org.in/" target="_blank">InAmigos</a>
+                        </p>
+                        <a href="InAmigos_Foundation.html" target="_main"
+                            class="text-sm text-purple-700 font-medium hover:underline">View More →</a>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div
+                    class="min-w-[300px] sm:min-w-[340px] bg-white shadow-lg rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row sm:items-center">
+                    <div class="p-5 sm:w-1/3 flex items-center justify-center">
+                        <img src="Internship_Tasks.jpg" alt="Personal Projects"
+                            class="h-24 w-32 object-cover rounded-xl shadow-md" />
+                    </div>
+                    <div class="p-4 sm:w-2/3">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Personal Projects</h3>
+                        <p class="text-sm text-purple-600 font-medium mb-2">Internship + Exploration</p>
+                        <a href="Internship_Tasks.html" target="_main"
+                            class="text-sm text-purple-700 font-medium hover:underline">View More →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <div class="w-full flex flex-col items-center text-center bg-gray-100 ">
+        <footer class="border-t border-transparent py-5 text-sm text-gray-800 w-full max-w-2xl bg-transparent">
+            <div class="mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                <!-- Middle: Message -->
+                <div class="md:text-center w-full">
+                    <p class="text-lg text-gray-600 mb-6">Thanks for reaching the bottom of this page. If you like
+                        what
+                        you see, let's
+                        connect and build something together!</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-xl font-bold gradient-text">JIVATI</a>
+                    <p class="mt-2 text-sm">Graphic Designer & Visual Storyteller</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="https://www.linkedin.com/in/jivati-jamariya-b32413249/" target="_blank"
+                        class="hover:text-purple-400 transition flex items-center space-x-2">
+                        <i class="fab fa-linkedin text-xl"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:jivati@example.com"
+                        class="hover:text-purple-400 transition flex items-center space-x-2">
+                        <i class="fas fa-envelope text-xl"></i>
+                        <span>Email Me</span>
+                    </a> <!-- <a href="#about" class="hover:text-purple-400 transition">About</a>
+                    <a href="#skills" class="hover:text-purple-400 transition">Skills</a>
+                    <a href="#resume" class="hover:text-purple-400 transition">Resume</a> -->
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>© 2023 Jivati Design Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

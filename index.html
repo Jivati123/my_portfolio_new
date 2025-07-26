@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jivati | Graphic Design Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --dark: #2D3748;
+            --light: #F7FAFC;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(255, 101, 132, 0.1) 100%);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            
+            
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-pill {
+            transition: all 0.2s ease;
+        }
+        
+        .skill-pill:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        } -->
+    </style>
+</head>
+
+
+<body>
+    <!-- Responsive Navigation Bar -->
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md px-4 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <div class="text-xl font-bold gradient-text">JIVATI</div>
+
+            <!-- Hamburger Menu Button (Mobile Only) -->
+            <button id="menu-toggle" class="text-gray-700 text-2xl md:hidden">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Nav Links (Desktop) -->
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html#home" class="nav-link text-gray-700 hover:text-purple-600 transition">Home</a>
+                <a href="index.html#work" class="nav-link text-gray-700 hover:text-purple-600 transition">Work</a>
+                <a href="index.html#skills" class="nav-link text-gray-700 hover:text-purple-600 transition">Skills</a>
+                <a href="about.html" class="nav-link text-gray-700 hover:text-purple-600 transition">About</a>
+                <a href="Resume (2).pdf" target="_main"
+                    class="nav-link text-gray-700 hover:text-purple-600 transition">Resume</a>
+            </div>
+        </div>
+
+        <!-- Nav Links (Mobile Dropdown) -->
+        <div id="mobile-menu" class="hidden flex-col space-y-4 mt-4 px-4 md:hidden">
+            <a href="index.html#home" class="nav-link text-gray-700 hover:text-purple-600 transition">Home</a> -
+            <a href="index.html#work" class="nav-link text-gray-700 hover:text-purple-600 transition">Work</a> -
+            <a href="index.html#skills" class="nav-link text-gray-700 hover:text-purple-600 transition">Skills</a> -
+            <a href="about.html" class="nav-link text-gray-700 hover:text-purple-600 transition">About</a> -
+            <a href="Resume (2).pdf" target="_main"
+                class="nav-link text-gray-700 hover:text-purple-600 transition">Resume</a>
+        </div>
+    </nav>
+
+    <!-- JavaScript to Toggle Menu -->
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <section id="home" class="hero min-h-screen flex items-center pt-20">
+
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between py-20">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-650 mb-6">Hi, I'm <span
+                            class="gradient-text">Jivati</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl font-semibold text-gray-600 mb-6">
+                        Team Leader • Mentor • Digital Artist • Storyteller
+                    </h2>
+
+                    <p class="text-lg text-gray-500 mb-8">
+                        Crafting meaningful visuals that tell stories and inspire action — bringing creativity and
+                        clarity to every interaction, collaboration, and design solution through strong communication
+                        and leadership.
+                    </p>
+
+                    <div class="flex space-x-4">
+                        <a href="#work"
+                            class="bg-gradient-to-r from-purple-600 to-pink-500 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition">View
+                            My Work</a>
+                        <a href="https://www.linkedin.com/in/jivati-jamariya-b32413249/" target="_blank"
+                            class="border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-full font-medium hover:bg-purple-50 transition">Contact
+                            Me</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl floating">
+                        <img src="hero_my_photo.jpeg"
+                            alt="Portrait of Jivati - A creative graphic designer with a modern aesthetic"
+                            class="w-full h-full object-cover" />
+                    </div>
+                </div>
+                <!-- 
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-full h-auto overflow-hidden shadow-2xl">
+                        <img src="Canva_multiple.jpg"
+                            alt="Portrait of Jivati - A creative graphic designer with a modern aesthetic"
+                            class="w-full h-auto object-cover" />
+                    </div>
+                </div> -->
+            </div>
+        </section>
+        <section id="work" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-4 gradient-text">Featured Work</h2>
+                <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
+                    Explore my professional journey, creative experiences, and a portfolio of thoughtfully crafted
+                    design work that exemplifies my artistic vision and technical proficiency.
+                </p>
+
+                <!-- Project 0 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 sm:px-8 lg:px-16 py-10">
+                    <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative overflow-hidden h-64">
+                            <a href="Habuild_Support_Team.html" target="_main">
+                                <img src="Habuild_Customer_support.jpg" alt="Habuild project"
+                                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+                        </div>
+                        <div class="p-6">
+                            <!-- <h3 class="text-xl font-bold mb-2">Habuild</h3> -->
+                            <h3 class="text-medium font-semibold mb-2 break-words">Customer Success Team Lead & Mentor
+                                @<a href="https://habuild.in/" target="_main">Habuild</a></h3>
+                            <!-- <p class="text-gray-600 mb-4">India's First Habit Building Program</p> -->
+                            <a href="Habuild_Support_Team.html"
+                                class="text-purple-600 hover:underline text-sm font-medium" target="_main">View
+                                More</a>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 1 -->
+                    <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative overflow-hidden h-64">
+                            <a href="Habuild_Designs.html" target="_main">
+                                <img src="Habuild_clipMask.jpg" alt="Habuild project"
+                                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-medium font-semibold mb-2 break-words">Digital Artist
+                                @<a href="https://habuild.in/" target="_main">Habuild</a></h3>
+                            <!-- <p class="text-gray-600 mb-4">India's First Habit Building Program</p> -->
+                            <a href="Habuild_Designs.html" class="text-purple-600 hover:underline text-sm font-medium"
+                                target="_main">View More</a>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative overflow-hidden h-64">
+                            <a href="InAmigos_Foundation.html" target="_main">
+                                <img src="InAmigos_Foundation.jpg" alt="InAmigos Foundation"
+                                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-medium font-semibold mb-2 break-words">Design Intern
+                                @<a href="https://inamigosfoundation.org.in/" target="_main">InAmigos</a></h3>
+                            </h3>
+                            <!-- <p class="text-gray-600 mb-4">Community-focused organization working to empower people</p> -->
+                            <a href="InAmigos_Foundation.html"
+                                class="text-purple-600 hover:underline text-sm font-medium" target="_main">View
+                                More</a>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="relative overflow-hidden h-64">
+                            <a href="Internship_Tasks.html" target="_main">
+                                <img src="Internship_Tasks.jpg" alt="Project 3"
+                                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-medium font-semibold mb-2 break-words">Personal Projects</h3>
+                            <!-- <p class="text-gray-600 mb-4">These posters were created during internship tasks and
+                                personal projects</p> -->
+                            <a href="Internship_Tasks.html" class="text-purple-600 hover:underline text-sm font-medium"
+                                target="_main">View More</a>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-10 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-4 gradient-text">Design & Techincal Skills</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">A strong foundation in both design
+                    principles and technical proficiency enables the development of cohesive visual solutions that are
+                    both aesthetically compelling and strategically aligned with project objectives..</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Skill Category 1 -->
+
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-pencil-alt text-purple-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Core Skills</h3>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-600 mr-2 mt-1"></i>
+                                <span>Strong sense of aesthetics and creativity </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-600 mr-2 mt-1"></i>
+                                <span>Excellent communication & presentation abilities </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-600 mr-2 mt-1"></i>
+                                <span>Team leadership with mentoring experience</span>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <!-- Skill Category 2 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-desktop text-purple-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Core Skills</h3>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Design Tools</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                                <span>Adobe Photoshop</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                                <span>Adobe Illustrator</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                                <span>Canva</span>
+                            </li>
+                    </div>
+
+                    <!-- Skill Category 3 -->
+                    <!-- Skill Category 2 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-print text-purple-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4">Web Development Skills</h3>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                                <span>HTML</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                                <span>CSS</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                                <span>JavaScript</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                                <span>Learning React...</span>
+                            </li>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="pt-4 pb-8 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                    <!-- Participation Card -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-users text-purple-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4">Participation</h3>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-600 mr-2 mt-1"></i>
+                                <span>Led the Customer Success Squad and mentored remote HCF (Habuild Caring Friends)
+                                    members, building communication and presentation materials.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-600 mr-2 mt-1"></i>
+                                <span>Created visual content and learning materials using Canva, Photoshop, and
+                                    Illustrator for internal training and communication.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-600 mr-2 mt-1"></i>
+                                <span>Delivered presentations on operational processes, using graphic elements to
+                                    simplify software training for new interns.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Certificates Card -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-certificate text-purple-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-4">Certificates</h3>
+                        </div>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-600 mr-2 mt-1"></i>
+                                <span>
+                                    Graphic Design Internship – InAmigos Foundation
+                                    <p>Certificate of Completion / Appreciation / Recommendation</p>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-600 mr-2 mt-1"></i>
+                                <span>Personality Development</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-600 mr-2 mt-1"></i>
+                                <span>English Language & Pronunciation Course – Participation Certificate</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="coding-projects" class="py-10 bg-white-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-4 gradient-text">Coding Projects</h2>
+                <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+
+                    <!-- Project 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                        <h3 class="text-lg font-semibold mb-2">Hiring Form to Google Sheets</h3>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Built a fully responsive frontend with HTML/CSS and JavaScript, connected to Google Sheets
+                            using Apps Script. It includes validation, age limits, and optional image upload.
+                        </p>
+                        <a href="https://jivati123.github.io/New_Hiring/" target="_blank"
+                            class="text-purple-600 hover:underline text-sm font-medium">View
+                            Project</a>
+                    </div>
+
+
+                    <!-- Project 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                        <h3 class="text-lg font-semibold mb-2">QuizMaster</h3>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Developed an interactive quiz project featuring basic questions about Habuild. The quiz
+                            includes a countdown timer and a dynamic leaderboard that tracks and displays player
+                            scores in real-time </p>
+                        <a href="https://jivati123.github.io/QuizMaster/" target="_blank"
+                            class="text-purple-600 hover:underline text-sm font-medium">View
+                            Project</a>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                        <h3 class="text-lg font-semibold mb-2">YouTube Clone</h3>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Currently working on building a YouTube-inspired platform — a sleek video browsing
+                            experience with essential features like search, thumbnails, and playback. Stay tuned with me
+                            to
+                            check out the project</p>
+                        <a href="#Coding Projects" class="text-purple-600 hover:underline text-sm font-medium">Coming
+                            Soon...</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="flex justify-center space-x-4 mt-16 mb-8">
+            <a href="index.html#work"
+                class="inline-flex items-center justify-center border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-full font-medium hover:bg-purple-50 transition">View
+                All Projects</a>
+        </div>
+
+        <div class="w-full flex flex-col items-center text-center bg-gray-100 ">
+            <footer class="border-t border-transparent py-5 text-sm text-gray-800 w-full max-w-2xl bg-transparent">
+                <div class="mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                    <!-- Middle: Message -->
+                    <div class="md:text-center w-full">
+                        <p class="text-lg text-gray-600 mb-6">Thanks for reaching the bottom of this page. If you like
+                            what
+                            you see, let's
+                            connect and build something together!</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-gray-400 py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-6 md:mb-0">
+                        <a href="#" class="text-xl font-bold gradient-text">JIVATI</a>
+                        <p class="mt-2 text-sm">Graphic Designer & Visual Storyteller</p>
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <a href="https://www.linkedin.com/in/jivati-jamariya-b32413249/" target="_blank"
+                            class="hover:text-purple-400 transition flex items-center space-x-2">
+                            <i class="fab fa-linkedin text-xl"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="jamariyajivati@gmail.com"
+                            class="hover:text-purple-400 transition flex items-center space-x-2">
+                            <i class="fas fa-envelope text-xl"></i>
+                            <span>Email Me</span>
+                        </a> <!-- <a href="#about" class="hover:text-purple-400 transition">About</a>
+                    <a href="#skills" class="hover:text-purple-400 transition">Skills</a>
+                    <a href="#resume" class="hover:text-purple-400 transition">Resume</a> -->
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                    <p>© 2023 Jivati Design Studio. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+</body>
+
+</html>
