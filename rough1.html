@@ -9,35 +9,381 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between py-20">
-        <div class="md:w-1/2 mb-10 md:mb-0">
-            <h1 class="text-4xl md:text-6xl font-bold text-gray-650 mb-6">Hi, I'm <span
-                    class="gradient-text">Jivati</span>
-            </h1>
-            <h1 class="text-xl md:text-2xl font-semibold text-gray-600 mb-6">
-                <em>It's so nice to <br>meet you, I'm <br><strong>Jivati :)</strong></em>
-            </h1>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff;
+            color: #111;
+            /* margin: 0px 50px; */
+        }
 
-            <div class="flex space-x-4">
-                <a href="Resume (2).pdf"
-                    class="bg-gradient-to-r from-purple-600 to-pink-500 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition">Resume</a>
-                <a href="https://www.linkedin.com/in/jivati-jamariya-b32413249/" target="_blank"
-                    class="border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-full font-medium hover:bg-purple-50 transition">LinkedIn</a>
+        .about-section {
+            padding: 40px 20px;
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 600px;
+            flex-wrap: wrap;
+            gap: 80px;
+            margin-left: 70px;
+        }
+
+
+        .intro-text {
+            flex: 1;
+            width: 400px;
+        }
+
+        .intro-text h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .intro-text strong {
+            font-weight: bold;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 12px 26px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Gradient Filled Button */
+        .btn.gradient {
+            background: linear-gradient(to right, #7f00ff, #e100ff);
+            color: #fff;
+            box-shadow: 0 8px 16px rgba(128, 0, 255, 0.2);
+            border: none;
+        }
+
+        .btn.gradient:hover {
+            opacity: 0.9;
+        }
+
+        /* Outline Button */
+        .btn.outline {
+            background: transparent;
+            border: 2px solid #a200ff;
+            color: #a200ff;
+        }
+
+        .btn.outline:hover {
+            background: #f3e8ff;
+            color: #7f00ff;
+        }
+
+
+        .image-stack {
+            flex: 2;
+            position: relative;
+            height: 380px;
+            margin: 20px;
+            /* gap: 50px; */
+        }
+
+        .img {
+            position: absolute;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            width: 150px;
+        }
+
+        /* Top center */
+        .img1 {
+            top: 0;
+            left: 200px;
+            z-index: 2;
+        }
+
+        /* Bottom left */
+        .img2 {
+            top: 80px;
+            left: 50px;
+            z-index: 3;
+        }
+
+        /* Bottom center */
+        .img3 {
+            top: 200px;
+            left: 200px;
+            z-index: 4;
+            width: 180px;
+        }
+
+        /* Bottom right */
+        .img4 {
+            top: 120px;
+            left: 350px;
+            z-index: 2;
+            width: 300px;
+        }
+
+        @media (max-width: 1024px) {
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+                margin-left: 0;
+            }
+
+            .intro-text {
+                width: 100%;
+                text-align: center;
+            }
+
+            .intro-text h1 {
+                font-size: 2rem;
+            }
+
+            .button-group {
+                justify-content: center;
+            }
+
+            .image-stack {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 40px 0 0 0;
+                position: relative;
+                gap: 12px;
+            }
+
+            .image-stack .img {
+                position: relative;
+                width: 130px;
+                margin-left: 0;
+            }
+
+            .img1,
+            .img2,
+            .img3,
+            .img4 {
+                top: auto;
+                left: auto;
+                width: 130px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Responsive Navigation Bar -->
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md px-4 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <div class="text-xl font-bold gradient-text">JIVATI</div>
+
+            <!-- Hamburger Menu Button (Mobile Only) -->
+            <button id="menu-toggle" class="text-gray-700 text-2xl md:hidden">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Nav Links (Desktop) -->
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html#home" class="nav-link text-gray-700 hover:text-purple-600 transition">Home</a>
+                <a href="index.html#work" class="nav-link text-gray-700 hover:text-purple-600 transition">Work</a>
+                <a href="index.html#skills" class="nav-link text-gray-700 hover:text-purple-600 transition">Skills</a>
+                <a href="about.html" class="nav-link text-gray-700 hover:text-purple-600 transition">About</a>
+                <a href="Resume (2).pdf" target="_main"
+                    class="nav-link text-gray-700 hover:text-purple-600 transition">Resume</a>
             </div>
         </div>
 
-        <div class="md:w-1/2 flex justify-center">
-            <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl floating">
-                <img src="aboutPhotos/myphoto10_aboutme.jpeg" class="img img1" alt="img1"
-                    class="w-full h-full object-cover">
-                <img src="aboutPhotos/myphoto11_aboutme.jpeg" class="img img2" alt="img2"
-                    class="w-full h-full object-cover">
-                <img src="aboutPhotos/myphoto12_aboutme.jpeg" class="img img3" alt="img3"
-                    class="w-full h-full object-cover">
-                <img src="aboutPhotos/myphoto13_aboutme.jpeg" class="img img4" alt="img4"
-                    class="w-full h-full object-cover" />
+        <!-- Nav Links (Mobile Dropdown) -->
+        <div id="mobile-menu" class="hidden flex-col space-y-4 mt-4 px-4 md:hidden">
+            <a href="index.html#home" class="nav-link text-gray-700 hover:text-purple-600 transition">Home</a> -
+            <a href="index.html#work" class="nav-link text-gray-700 hover:text-purple-600 transition">Work</a> -
+            <a href="index.html#skills" class="nav-link text-gray-700 hover:text-purple-600 transition">Skills</a> -
+            <a href="about.html" class="nav-link text-gray-700 hover:text-purple-600 transition">About</a> -
+            <a href="Resume (2).pdf" target="_main"
+                class="nav-link text-gray-700 hover:text-purple-600 transition">Resume</a>
+        </div>
+    </nav>
+
+<section class="about-section py-16">
+    <div
+        class="about-content flex flex-col-reverse lg:flex-row items-center justify-center gap-16 lg:gap-24 max-w-7xl mx-auto px-6">
+
+        <!-- Text content -->
+        <div class="intro-text text-center lg:text-left">
+            <h1 class="text-4xl sm:text-5xl font-semibold leading-snug">
+                <em class="text-gray-800">It's so nice to <br>meet you, I'm <br><strong
+                        class="text-black font-bold">Jivati :)</strong></em>
+            </h1>
+
+            <div class="button-group mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <a href="Resume (2).pdf" target="_blank">
+                    <button
+                        class="px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold shadow-lg hover:shadow-xl transition">Resume</button>
+                </a>
+                <a href="https://www.linkedin.com/in/jiwati-jamariya-b32413249/" target="_blank">
+                    <button
+                        class="px-6 py-3 rounded-full border-2 border-purple-500 text-purple-600 font-medium hover:bg-purple-50 transition">LinkedIn</button>
+                </a>
             </div>
         </div>
 
-    </body>
-    </html>
+    <!-- Image stack -->
+    <div class="image-stack flex flex-wrap justify-center gap-4 lg:gap-6">
+      <img src="aboutPhotos/myphoto10_aboutme.jpeg" class="w-32 sm:w-40 md:w-48 lg:w-52 rounded-xl shadow-md" alt="img1">
+      <img src="aboutPhotos/myphoto11_aboutme.jpeg" class="w-32 sm:w-40 md:w-48 lg:w-52 rounded-xl shadow-md" alt="img2">
+      <img src="aboutPhotos/myphoto12_aboutme.jpeg" class="w-32 sm:w-40 md:w-48 lg:w-52 rounded-xl shadow-md" alt="img3">
+      <img src="aboutPhotos/myphoto13_aboutme.jpeg" class="w-32 sm:w-40 md:w-48 lg:w-52 rounded-xl shadow-md" alt="img4">
+    </div>
+  </div>
+</section>
+
+
+
+
+    <section id="about" class="py-20 bg-white-50">
+        <div class="w-full px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+
+                <div class="w-full max-w-5xl mx-auto text-left">
+                    <h2 class="text-2xl font-bold mb-6 gradient-text">Who am I</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        I am someone who thrives on growth, creativity, and connection. From leading a team at
+                        Habuild to mentoring 40+ individuals, I find purpose in helping others succeed while
+                        constantly evolving myself.
+                        <br>
+                        My passion for visual storytelling and design led me to intern with InAmigos Foundation,
+                        where I explored creative communication through design, social media, and content creation.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Currently, I’m committed to developing as a digital artist and designer, blending creativity
+                        with purpose, and believing that impactful communication is both a craft and a service.
+                        <br>
+                        Above all, I am someone who values learning, collaboration, and building meaningful
+                        connections — always looking forward to creating something beautiful, together.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 bg-white-50">
+        <div class="w-full max-w-5xl mx-auto text-left px-4 mb-2">
+            <h2 class="text-2xl font-bold mb-6 gradient-text">When I'm not designing</h2>
+
+            <div class="grid grid-cols-1 gap-8">
+                <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm w-full">
+                    <h3 class="text-lg font-semibold mb-2">Sketching and Painting</h3>
+                    <p class="text-base md:text-lg text-gray-600 mb-4">
+                        In my free time, I’ve always found myself drawn to painting and sketching. It’s
+                        been my favorite way to unwind — a creative escape that has fueled my
+                        imagination and turned art into a lifelong passion.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                        <a href="Paintings/Red bird.jpeg" target="_blank">
+                            <img src="Paintings/Red bird.jpeg" alt="sketch 1"
+                                class="rounded-lg w-full aspect-[3/4] object-cover" />
+                        </a>
+                        <a href="Paintings/radha krishna.jpeg" target="_blank">
+                            <img src="Paintings/radha krishna.jpeg" alt="sketch 2"
+                                class="rounded-lg w-full aspect-[3/4] object-cover" />
+                        </a>
+                        <a href="Paintings/wall hanging.jpeg" target="_blank">
+                            <img src="Paintings/wall hanging.jpeg" alt="sketch 3"
+                                class="rounded-lg w-full aspect-[3/4] object-cover" />
+                        </a>
+                        <a href="Paintings/bird board.jpeg" target="_blank">
+                            <img src="Paintings/bird board.jpeg" alt="sketch 4"
+                                class="rounded-lg w-full aspect-[3/4] object-cover" />
+                        </a>
+                        <a href="Paintings/panda.jpeg" target="_blank">
+                            <img src="Paintings/panda.jpeg" alt="sketch 5"
+                                class="rounded-lg w-full aspect-[3/4] object-cover" />
+                        </a>
+                        <a href="Paintings/music.jpeg" target="_blank">
+                            <img src="Paintings/music.jpeg" alt="sketch 6"
+                                class="rounded-lg w-full aspect-[3/4] object-cover" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="flex justify-center space-x-4 mt-16 mb-8">
+        <a href="index.html#work"
+            class="inline-flex items-center justify-center border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-full font-medium hover:bg-purple-50 transition">View
+            All Projects</a>
+    </div>
+
+    <div class="w-full flex flex-col items-center text-center bg-gray-100 ">
+        <footer class="border-t border-transparent py-5 text-sm text-gray-800 w-full max-w-2xl bg-transparent">
+            <div class="mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                <!-- Middle: Message -->
+                <div class="md:text-center w-full">
+                    <p class="text-lg text-gray-600 mb-6">Thanks for reaching the bottom of this page. If you like
+                        what
+                        you see, let's
+                        connect and build something together!</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-xl font-bold gradient-text">JIVATI</a>
+                    <p class="mt-2 text-sm">Digital Artist & Visual Storyteller</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="https://www.linkedin.com/in/jiwati-jamariya-b32413249/" target="_blank"
+                        class="hover:text-purple-400 transition flex items-center space-x-2">
+                        <i class="fab fa-linkedin text-xl"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="jamariyajivati@gmail.com"
+                        class="hover:text-purple-400 transition flex items-center space-x-2">
+                        <i class="fas fa-envelope text-xl"></i>
+                        <span>Email Me</span>
+                    </a> <!-- <a href="#about" class="hover:text-purple-400 transition">About</a>
+                    <a href="#skills" class="hover:text-purple-400 transition">Skills</a>
+                    <a href="#resume" class="hover:text-purple-400 transition">Resume</a> -->
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>© 2025 JJ Designs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
